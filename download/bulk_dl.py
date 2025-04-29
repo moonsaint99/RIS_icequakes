@@ -2,7 +2,7 @@ import obspy
 from obspy.clients.fdsn.mass_downloader import RectangularDomain, Restrictions, MassDownloader
 import os
 
-def download_data(download_path: str = '../raw_data_cache'):
+def download_data(download_path: str = 'raw_data_cache'):
     domain = RectangularDomain(
         minlatitude=-90,
         maxlatitude=-70,
@@ -26,7 +26,7 @@ def download_data(download_path: str = '../raw_data_cache'):
     # Create a helper function to name the filepath for the downloaded data
     def mseed_pathname(network, station, location, channel, starttime, endtime):
         date = starttime.strftime("%Y%m%d")
-        return os.path.join(download_path, f"{date}/{network}.{station}.{channel}.mseed")
+        return os.path.join(download_path, f"{date}/{network}_{station}/{channel}.mseed")
 
     # Create a helper function to name the downloaded data appropriately
     def get_mseed_storage(network, station, location, channel, starttime, endtime):
@@ -41,5 +41,3 @@ def download_data(download_path: str = '../raw_data_cache'):
     mdl = MassDownloader(providers=['IRIS'])
     mdl.download(domain, restrictions, mseed_storage=get_mseed_storage,
                  stationxml_storage="stations")
-
-download_data()
