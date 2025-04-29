@@ -6,4 +6,7 @@
 /.pytest_cache
 /.mypy_cache
 
-./uv.lock
+uv.lock
+RISMap.qgz
+*.mseed
+*.pyc
