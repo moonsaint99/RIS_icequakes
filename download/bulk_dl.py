@@ -12,8 +12,8 @@ def download_data(download_path: str = 'raw_data_cache'):
 
     restrictions = Restrictions(
         starttime=obspy.UTCDateTime(2014,11,28),
-        endtime=obspy.UTCDateTime(2014,12,10),
-        #endtime=obspy.UTCDateTime(2016,11,1),
+        # endtime=obspy.UTCDateTime(2014,12,15),
+        endtime=obspy.UTCDateTime(2016,11,1),
         chunklength_in_sec=86400,
         network="XH",
         station='DR05,DR06,DR07,DR08,DR09,DR10,DR11,DR12,DR13,DR14,RS04,RS05',
