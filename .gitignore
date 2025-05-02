@@ -6,7 +6,6 @@
 /.pytest_cache
 /.mypy_cache
 /outputs/*
-
 uv.lock
 RISMap.qgz
 *.mseed
