@@ -4,6 +4,10 @@ version = "0.1.0"
 description = "A package for detecting, locationg, and visualizing icequakes"
 requires-python = ">=3.12"
 dependencies = [
+    "mlx==0.25.1",
     "notebook>=7.4.1",
     "obspy==1.4.1",
+    "pandas==2.2.3",
+    "pymetal==0.5.0",
+    "torch==2.7.0",
 ]
