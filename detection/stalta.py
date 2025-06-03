@@ -24,3 +24,4 @@ def detect_stalta(tr: op.Trace, output_dir="outputs/stalta_detections/"):
 def detect_stalta_fromtracepath(trace_path):
     tr = op.read(trace_path)[0]
     return detect_stalta(tr)
+

@@ -101,4 +101,7 @@ def stalta_picks_to_rayleigh_times(date_path = '/Users/rishi/seis/RIS_icequakes/
                 f.write(f'{time}\n')
     print(f'Rayleigh wave arrival times for {sta} written to {output_file}')
 
-stalta_picks_to_rayleigh_times()
+
+if __name__ == "__main__":
+    stalta_picks_to_rayleigh_times()
+

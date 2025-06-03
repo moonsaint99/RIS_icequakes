@@ -10,4 +10,6 @@ def assoc_day(date_path = '/Users/rishi/seis/RIS_icequakes/outputs/stalta_detect
         sta_path_dict[os.path.basename(sta_path).split('.')[0]] = sta_path
     return sta_path_dict
 
-print(assoc_day())
+
+if __name__ == "__main__":
+    print(assoc_day())
