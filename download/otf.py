@@ -2,7 +2,9 @@
 import obspy as op
 from download.sta_inv import get_sta_inv_offline
 
-def process_otf(tr=op.Trace, fs: float = 50., pre_filt: list = [4, 5, 20, 22]):
+def process_otf(tr: op.Trace, fs: float = 50., pre_filt: list | None = None):
+    if pre_filt is None:
+        pre_filt = [4, 5, 20, 22]
     sta = tr.meta.station
     net = tr.meta.network
     tr.interpolate(sampling_rate=fs, method='lanczos', a=20)
@@ -12,3 +14,4 @@ def process_otf(tr=op.Trace, fs: float = 50., pre_filt: list = [4, 5, 20, 22]):
     inv = get_sta_inv_offline(sta, net)
     tr.remove_response(inventory=inv, pre_filt=pre_filt, output='VEL')
     return tr
+
